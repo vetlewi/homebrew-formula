@@ -5,6 +5,11 @@ class Geant4 < Formula
   version "10.7.1"
   sha256 "525161753a3d9c2ad19b25f2eabc8bbede91c236120771bd9c3f4aaac8412e1e"
 
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 cellar: :any, big_sur: "a75cac9f3686b757ea668eecf3e75d873047b74492fe81ee3cc7bde5de209688"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
   depends_on "qt@5"
