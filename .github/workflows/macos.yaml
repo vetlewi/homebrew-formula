@@ -1,0 +1,22 @@
+name: MacOS
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup tap
+        run: brew tap vetlewi/formula
+
+      - name: Install dependencies
+        run: brew install --only-dependencies geant4
+
+      - name: Build formula
+        run: brew install --build-bottle geant4
+
+      - name: Bottle formula
+        run: brew bottle --root-url="https://github.com/vetlewi/homebrew-formula/releases/download/v1.0" --no-rebuild geant4
