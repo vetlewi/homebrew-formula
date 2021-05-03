@@ -5,6 +5,11 @@ class Dummygeant < Formula
   version "10.7.1"
   sha256 "fef7fe380ccee18d5adb11e3441ef2688c5029bc773cd36f91321d341048b2d3"
 
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 cellar: :any_skip_relocation, big_sur: "434dd5312c0d55b4c299945ec40b9d03c2bad1cef5fec8d127669f109f82fe4a"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
   depends_on "qt@5"
