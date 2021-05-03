@@ -99,10 +99,6 @@ class Geant4 < Formula
       system "cmake", *args
       system "make", "install", "-j8"
     end
-
-    resources.each do |r|
-      (share/"Geant4-#{version}/data/#{r.name}#{r.version}").install r
-    end
   end
 
   def caveats
@@ -112,6 +108,12 @@ class Geant4 < Formula
         . #{HOMEBREW_PREFIX}/bin/geant4.sh (or .csh)
       before running an application built with Geant4.
     EOS
+  end
+
+  def post_install
+    resources.each do |r|
+      (share/"Geant4-#{version}/data/#{r.name}#{r.version}").install r
+    end
   end
 
   test do
