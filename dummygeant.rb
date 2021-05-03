@@ -1,4 +1,4 @@
-class DummyGeant < Formula
+class Dummygeant < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0/dummy_geant.zip"
