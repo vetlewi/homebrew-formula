@@ -84,16 +84,17 @@ class Geant4 < Formula
         -DGEANT4_USE_GDML=ON
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
-        -DQt5_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5
-        -DQt5Core_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Core
-        -DQt5Gui_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Gui
-        -DQt5Widgets_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Widgets
-        -DQt5OpenGL_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5OpenGL
-        -DQt5PrintSupport_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5PrintSupport
-        -DQt53DCore_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DCore
-        -DQt53DExtras_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DExtras
-        -DQt53DRender_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DRender
       ]
+
+      args << "-DQt5_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5" if OS.mac?
+      args << "-DQt5Core_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Core" if OS.mac?
+      args << "-DQt5Gui_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Gui" if OS.mac?
+      args << "-DQt5Widgets_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Widgets" if OS.mac?
+      args << "-DQt5OpenGL_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5OpenGL" if OS.mac?
+      args << "-DQt5PrintSupport_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5PrintSupport" if OS.mac?
+      args << "-DQt53DCore_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DCore" if OS.mac?
+      args << "-DQt53DExtras_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DExtras" if OS.mac?
+      args << "-DQt53DRender_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DRender" if OS.mac?
 
       system "cmake", *args
       system "make", "install"
