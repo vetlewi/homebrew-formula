@@ -7,7 +7,7 @@ class Geant4 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "xerces-c"
 
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
