@@ -91,7 +91,7 @@ class Geant4 < Formula
       ]
 
       system "cmake", *args
-      system "make", "install", "-j4"
+      system "make", "install"
     end
   end
 
