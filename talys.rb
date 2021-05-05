@@ -1,9 +1,6 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Talys < Formula
-  desc "TALYS is an open source software package (GPL license) for the simulation of nuclear reactions"
-  homepage "talys.eu"
+  desc "An open source software package for the simulation of nuclear reactions"
+  homepage "https://talys.eu"
   url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0/talys1.95.tar.gz"
   sha256 "14d1f30b9d2608071cab1ec5996e0221d82dabffb63f2dd27978f30a52cd7a07"
   license "GPL-1.0-or-later"
@@ -31,7 +28,6 @@ class Talys < Formula
   end
 
   def post_install
-    (share/"talys/structure").install resource("TalysDB")
+    (pkgshare/"structure").install resource("TalysDB")
   end
-
 end
