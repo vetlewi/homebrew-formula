@@ -28,7 +28,6 @@ class Talys < Formula
       system "make", "install"
     end
     share.install "LICENSE"
-    share.mkpath
   end
 
   def post_install
