@@ -1,13 +1,13 @@
 class Talys < Formula
-  desc "An open source software package for the simulation of nuclear reactions"
-  homepage "https://talys.eu"
+  desc "Open source software package for the simulation of nuclear reactions"
+  homepage "http://talys.eu"
   url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0/talys1.95.tar.gz"
   sha256 "14d1f30b9d2608071cab1ec5996e0221d82dabffb63f2dd27978f30a52cd7a07"
   license "GPL-1.0-or-later"
 
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, big_sur: "14c05bd10050ed88b3bc1b6d3351b4f09a932463756084e8830315ea8b79d78f"
+    sha256 cellar: :any, big_sur:  "14c05bd10050ed88b3bc1b6d3351b4f09a932463756084e8830315ea8b79d78f"
     sha256 cellar: :any, catalina: "f407da9a8fd0161b6de36f37a9b6ab08f5f677265a36cc3c24d3d5cf37063ae3"
   end
 
@@ -24,7 +24,7 @@ class Talys < Formula
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
-    share.install "LICENSE"
+    pkgshare.install "LICENSE"
   end
 
   def post_install
