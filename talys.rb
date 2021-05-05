@@ -33,7 +33,7 @@ class Talys < Formula
   end
 
   test do
-    assert_match "The TALYS team congratulates you with this successful calculation.", shell_output("#{bin}/talys #{pkgshare}/simple.txt")
+    assert_match "The TALYS team congratulates you with this successful calculation.", shell_output("#{bin}/talys < #{pkgshare}/simple.txt")
   end
 
 end
