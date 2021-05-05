@@ -14,6 +14,11 @@ class Talys < Formula
   depends_on "cmake" => :build
   depends_on "gcc" => :build
 
+  resource "TalysDB" do
+    url "https://github.com/vetlewi/Homebrew-formula/releases/download/v1.0/talysDB1.95.tar.gz"
+    sha256 "8a9308ea2b586abb65f0d43087ba01f8bb333837ed0e5438d6dc1ee66b85bfe1"
+  end
+
   def install
     mkdir "talys_build" do
       system "cmake", "..", *std_cmake_args
@@ -23,17 +28,12 @@ class Talys < Formula
     pkgshare.install "test/simple.txt"
   end
 
-  resource "TalysDB" do
-    url "https://github.com/vetlewi/Homebrew-formula/releases/download/v1.0/talysDB1.95.tar.gz"
-    sha256 "8a9308ea2b586abb65f0d43087ba01f8bb333837ed0e5438d6dc1ee66b85bfe1"
-  end
-
   def post_install
     (pkgshare/"structure").install resource("TalysDB")
   end
 
   test do
-    assert_match "The TALYS team congratulates you with this successful calculation.", shell_output("#{bin}/talys < #{pkgshare}/simple.txt")
+    assert_match "The TALYS team congratulates you with this successful calculation.", shell_output(
+      "#{bin}/talys < #{pkgshare}/simple.txt")
   end
-
 end
