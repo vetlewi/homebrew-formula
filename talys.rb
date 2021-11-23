@@ -9,6 +9,7 @@ class Talys < Formula
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
     sha256 cellar: :any, big_sur:  "02cecf0a9071d8b965a8bd313dff23c0f8bb9c3b89ef1048a9d6a7972ce97f83"
     sha256 cellar: :any, catalina: "1e390c7b3302b19e16d41853ee564daa6b9ad5022dd12592ce59cdd223bca60f"
+    sha256 cellar: :any, monterey: "d411279629c7183f72717fe60a66200f46eee6abc6e07c459a599f977d92e26d"
   end
 
   depends_on "cmake" => :build
