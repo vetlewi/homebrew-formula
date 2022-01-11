@@ -1,24 +1,24 @@
 class Talys < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
-  url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0/talys1.95.tar.gz"
-  sha256 "4cadb8a35fb586efc6119470ffc185f8cf3ae2c2ed79e609b409515923f461ac"
+  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96-cmake.tar.gz"
+  sha256 "8f43d97afc3e6f31dd670962ba4e015a2caab2760e2941352444056e4444f330"
   license "GPL-1.0-or-later"
 
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 arm64_big_sur: "4bd9658050af9172c3a8fc264b2fc72518346498e9388a4df00f91217942bfbf"
-    sha256 cellar: :any, big_sur:  "02cecf0a9071d8b965a8bd313dff23c0f8bb9c3b89ef1048a9d6a7972ce97f83"
-    sha256 cellar: :any, catalina: "1e390c7b3302b19e16d41853ee564daa6b9ad5022dd12592ce59cdd223bca60f"
-    sha256 cellar: :any, monterey: "d411279629c7183f72717fe60a66200f46eee6abc6e07c459a599f977d92e26d"
+    #sha256 arm64_big_sur: "4bd9658050af9172c3a8fc264b2fc72518346498e9388a4df00f91217942bfbf"
+    #sha256 cellar: :any, big_sur:  "02cecf0a9071d8b965a8bd313dff23c0f8bb9c3b89ef1048a9d6a7972ce97f83"
+    #sha256 cellar: :any, catalina: "1e390c7b3302b19e16d41853ee564daa6b9ad5022dd12592ce59cdd223bca60f"
+    #sha256 cellar: :any, monterey: "d411279629c7183f72717fe60a66200f46eee6abc6e07c459a599f977d92e26d"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" => :build
 
   resource "TalysDB" do
-    url "https://github.com/vetlewi/Homebrew-formula/releases/download/v1.0/talysDB1.95.tar.gz"
-    sha256 "8a9308ea2b586abb65f0d43087ba01f8bb333837ed0e5438d6dc1ee66b85bfe1"
+    url "https://github.com/vetlewi/Homebrew-formula/releases/download/v1.0/talysDB1.96.tar.gz"
+    sha256 "d6da65baa463db0f9753ff1286bcde58e1cb22a238ae71cf3b976ee3f794ba7f"
   end
 
   def install
