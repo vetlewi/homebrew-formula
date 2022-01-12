@@ -88,16 +88,6 @@ class Geant4 < Formula
         -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
       ]
 
-      #args << "-DQt5_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5" if OS.mac?
-      #args << "-DQt5Core_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Core" if OS.mac?
-      #args << "-DQt5Gui_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Gui" if OS.mac?
-      #args << "-DQt5Widgets_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Widgets" if OS.mac?
-      #args << "-DQt5OpenGL_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5OpenGL" if OS.mac?
-      #args << "-DQt5PrintSupport_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5PrintSupport" if OS.mac?
-      #args << "-DQt53DCore_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DCore" if OS.mac?
-      #args << "-DQt53DExtras_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DExtras" if OS.mac?
-      #args << "-DQt53DRender_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DRender" if OS.mac?
-
       system "cmake", *args
       system "make", "install"
     end
