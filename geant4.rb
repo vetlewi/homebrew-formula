@@ -1,14 +1,14 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p01.tar.gz"
-  version "10.7.1"
-  sha256 "525161753a3d9c2ad19b25f2eabc8bbede91c236120771bd9c3f4aaac8412e1e"
+  url "http://cern.ch/geant4-data/releases/geant4-v11.0.0.tar.gz"
+  version "11.0"
+  sha256 "3cc8a7df9d3ff1c7a21a62d2eb3a10be15f6bb158d39323bf3213349c9ef75b9"
 
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, big_sur:  "a75cac9f3686b757ea668eecf3e75d873047b74492fe81ee3cc7bde5de209688"
-    sha256 cellar: :any, catalina: "7455d64767bdc04231c469521844190aa3bd9bfc96a534f5a3b93fda2c162563"
+    #sha256 cellar: :any, big_sur:  "a75cac9f3686b757ea668eecf3e75d873047b74492fe81ee3cc7bde5de209688"
+    #sha256 cellar: :any, catalina: "7455d64767bdc04231c469521844190aa3bd9bfc96a534f5a3b93fda2c162563"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -24,8 +24,8 @@ class Geant4 < Formula
   end
 
   resource "G4EMLOW" do
-    url "https://cern.ch/geant4-data/datasets/G4EMLOW.7.13.tar.gz"
-    sha256 "374896b649be776c6c10fea80abe6cf32f9136df0b6ab7c7236d571d49fb8c69"
+    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.0.tar.gz"
+    sha256 "d919a8e5838688257b9248a613910eb2a7633059e030c8b50c0a2c2ad9fd2b3b"
   end
 
   resource "PhotonEvaporation" do
@@ -44,8 +44,8 @@ class Geant4 < Formula
   end
 
   resource "G4PARTICLEXS" do
-    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.3.1.1.tar.gz"
-    sha256 "66c17edd6cb6967375d0497add84c2201907a25e33db782ebc26051d38f2afda"
+    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.4.0.tar.gz"
+    sha256 "9381039703c3f2b0fd36ab4999362a2c8b4ff9080c322f90b4e319281133ca95"
   end
 
   resource "G4ABLA" do
@@ -74,8 +74,8 @@ class Geant4 < Formula
   end
 
   resource "G4TENDL" do
-    url "https://cern.ch/geant4-data/datasets/G4TENDL.1.3.2.tar.gz"
-    sha256 "3b2987c6e3bee74197e3bd39e25e1cc756bb866c26d21a70f647959fc7afb849"
+    url "https://cern.ch/geant4-data/datasets/G4TENDL.1.4.tar.gz"
+    sha256 "4b7274020cc8b4ed569b892ef18c2e088edcdb6b66f39d25585ccee25d9721e0"
   end
 
   def install
@@ -85,17 +85,18 @@ class Geant4 < Formula
         -DGEANT4_USE_GDML=ON
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
+        -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
       ]
 
-      args << "-DQt5_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5" if OS.mac?
-      args << "-DQt5Core_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Core" if OS.mac?
-      args << "-DQt5Gui_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Gui" if OS.mac?
-      args << "-DQt5Widgets_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Widgets" if OS.mac?
-      args << "-DQt5OpenGL_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5OpenGL" if OS.mac?
-      args << "-DQt5PrintSupport_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5PrintSupport" if OS.mac?
-      args << "-DQt53DCore_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DCore" if OS.mac?
-      args << "-DQt53DExtras_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DExtras" if OS.mac?
-      args << "-DQt53DRender_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DRender" if OS.mac?
+      #args << "-DQt5_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5" if OS.mac?
+      #args << "-DQt5Core_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Core" if OS.mac?
+      #args << "-DQt5Gui_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Gui" if OS.mac?
+      #args << "-DQt5Widgets_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5Widgets" if OS.mac?
+      #args << "-DQt5OpenGL_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5OpenGL" if OS.mac?
+      #args << "-DQt5PrintSupport_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt5PrintSupport" if OS.mac?
+      #args << "-DQt53DCore_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DCore" if OS.mac?
+      #args << "-DQt53DExtras_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DExtras" if OS.mac?
+      #args << "-DQt53DRender_DIR=/usr/local/Cellar/qt@5/5.15.2/lib/cmake/Qt53DRender" if OS.mac?
 
       system "cmake", *args
       system "make", "install"
