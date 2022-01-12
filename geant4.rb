@@ -2,7 +2,7 @@ class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "http://cern.ch/geant4-data/releases/geant4-v11.0.0.tar.gz"
-  version "11.0"
+  version "11.0" # NOTE see post-install when updating to newer versions
   sha256 "3cc8a7df9d3ff1c7a21a62d2eb3a10be15f6bb158d39323bf3213349c9ef75b9"
 
   bottle do
@@ -101,9 +101,9 @@ class Geant4 < Formula
     EOS
   end
 
-  def post_install
-    resources.each do |r|
-      (share/"Geant4-#{version}/data/#{r.name}#{r.version}").install r
+  def post_install 
+    resources.each do |r| #Note | is a hack. Remove when changing script
+      (share/"Geant4-#{version}.0/data/#{r.name}#{r.version}").install r
     end
   end
 
