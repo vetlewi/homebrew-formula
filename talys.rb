@@ -3,7 +3,7 @@ class Talys < Formula
   homepage "http://talys.eu"
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96TfKeyword.tar.gz"
   version "1.96"
-  sha256 "8f43d97afc3e6f31dd670962ba4e015a2caab2760e2941352444056e4444f330"
+  sha256 "8397e9e7c3d5595bf6e0afe3b10dc114dd65b627b2717187f21242b551799f98"
   license "GPL-1.0-or-later"
 
   bottle do
