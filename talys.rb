@@ -12,7 +12,7 @@ class Talys < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
+  depends_on "gcc"
 
   resource "TalysDB" do
     url "https://github.com/vetlewi/Homebrew-formula/releases/download/v1.0/talysDB1.96.tar.gz"
