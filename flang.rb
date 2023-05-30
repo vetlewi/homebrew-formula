@@ -44,7 +44,7 @@ class Flang < Formula
     source = build.head? ? "flang" : "flang-#{version}.src"
     cmake_generator = build.with?("ninja") ? "Ninja" : "Unix Makefiles"
     system "cmake", "-G", cmake_generator,
-                    "-S", source, "-B", "build",
+                    "-S", ".", "-B", "build",
                     *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
