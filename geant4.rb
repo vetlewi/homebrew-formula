@@ -1,15 +1,15 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "http://cern.ch/geant4-data/releases/geant4-v11.0.0.tar.gz"
-  version "11.0" # NOTE see post-install when updating to newer versions
+  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.1.2/geant4-v11.1.2.tar.gz"
+  version "11.1.2" # NOTE see post-install when updating to newer versions
   sha256 "3cc8a7df9d3ff1c7a21a62d2eb3a10be15f6bb158d39323bf3213349c9ef75b9"
 
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, monterey: "0e099d61f40aa3a186c68a93027de8c85b9f432982703c59dc3854ba615c7a54"
-    sha256 cellar: :any, arm64_ventura: "e8a6ce9a65e3df8d2fffc5d92b77fdcf2d3af9b3c1e39491bcf2602df376f988"
-  end
+  #bottle do
+  #  root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+  #  sha256 cellar: :any, monterey: "0e099d61f40aa3a186c68a93027de8c85b9f432982703c59dc3854ba615c7a54"
+  #  sha256 cellar: :any, arm64_ventura: "e8a6ce9a65e3df8d2fffc5d92b77fdcf2d3af9b3c1e39491bcf2602df376f988"
+  #end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
