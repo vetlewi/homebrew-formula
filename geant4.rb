@@ -10,6 +10,10 @@ class Geant4 < Formula
   #  sha256 cellar: :any, monterey: "0e099d61f40aa3a186c68a93027de8c85b9f432982703c59dc3854ba615c7a54"
   #  sha256 cellar: :any, arm64_ventura: "e8a6ce9a65e3df8d2fffc5d92b77fdcf2d3af9b3c1e39491bcf2602df376f988"
   #end
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 arm64_ventura: "ac032697c712b43371812b546a9cd49612c171e54896f426ffacafff57f395fb"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
