@@ -5,7 +5,7 @@ class Geant4AT10 < Formula
   version "10.7.4"
   sha256 "7e381f8945c75388b79af98b95be31a0933641c1af8d74ab9b6cf39d5aa98317"
 
-  bottle do
+  #bottle do
   #  root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
   #  sha256 cellar: :any, big_sur:  "a75cac9f3686b757ea668eecf3e75d873047b74492fe81ee3cc7bde5de209688"
   #  sha256 cellar: :any, catalina: "7455d64767bdc04231c469521844190aa3bd9bfc96a534f5a3b93fda2c162563"
