@@ -108,7 +108,7 @@ class Geant4 < Formula
 
   def post_install 
     resources.each do |r| #Note | is a hack. Remove when changing script
-      (share/"Geant4-#{version}.0/data/#{r.name}#{r.version}").install r
+      (pkgshare/"data"/"#{r.name}#{r.version}").install r
     end
   end
 
