@@ -107,14 +107,14 @@ class Geant4 < Formula
     EOS
   end
 
-  def post_install 
-    resources.each do |r| #Note | is a hack. Remove when changing script
-      (pkgshare/"data"/"#{r.name}#{r.version}").install r
+  def post_install
+    resources.each do |r|
+      (share/"Geant4/data/#{r.name}#{r.version}").install r
     end
   end
 
   test do
-    system "cmake", share/"Geant4-#{version}/examples/basic/B1"
+    system "cmake", share/"Geant4/examples/basic/B1"
     system "make"
     (testpath/"test.sh").write <<~EOS
       . #{bin}/geant4.sh
