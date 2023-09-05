@@ -1,4 +1,4 @@
-class Geant4 < Formula
+class Geant4AT10 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p01.tar.gz"
