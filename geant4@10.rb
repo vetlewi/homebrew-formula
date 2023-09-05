@@ -85,7 +85,6 @@ class Geant4AT10 < Formula
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
         -DGEANT4_USE_SYSTEM_EXPAT=OFF
-        -DCMAKE_BUILD_TYPE=Debug
         -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
       ]
 
