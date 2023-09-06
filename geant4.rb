@@ -12,7 +12,7 @@ class Geant4 < Formula
   #end
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 arm64_ventura: "ac032697c712b43371812b546a9cd49612c171e54896f426ffacafff57f395fb"
+    sha256 arm64_ventura: "a27d364d9816092c9e22fe369e01025e9f40766b5c8d40c73103e22ca437c201"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,13 +23,13 @@ class Geant4 < Formula
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
 
   resource "G4NDL" do
-    url "https://cern.ch/geant4-data/datasets/G4NDL.4.6.tar.gz"
-    sha256 "9d287cf2ae0fb887a2adce801ee74fb9be21b0d166dab49bcbee9408a5145408"
+    url "https://cern.ch/geant4-data/datasets/G4NDL.4.7.tar.gz"
+    sha256 "7e7d3d2621102dc614f753ad928730a290d19660eed96304a9d24b453d670309"
   end
 
   resource "G4EMLOW" do
-    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.0.tar.gz"
-    sha256 "d919a8e5838688257b9248a613910eb2a7633059e030c8b50c0a2c2ad9fd2b3b"
+    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.2.tar.gz"
+    sha256 "3d7768264ff5a53bcb96087604bbe11c60b7fea90aaac8f7d1252183e1a8e427"
   end
 
   resource "PhotonEvaporation" do
