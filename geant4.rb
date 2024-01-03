@@ -12,7 +12,7 @@ class Geant4 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "xerces-c"
 
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
@@ -85,7 +85,7 @@ class Geant4 < Formula
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
         -DGEANT4_USE_SYSTEM_EXPAT=OFF
-        -DCMAKE_PREFIX_PATH=Formula["qt"].opt_prefix
+        -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
       ]
 
       system "cmake", *args
