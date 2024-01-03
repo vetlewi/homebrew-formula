@@ -1,18 +1,23 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.2.0/geant4-v11.2.0.tar.bz2"
-  version "11.2.0" # NOTE see post-install when updating to newer versions
-  sha256 "1a9e7eeb79519156c10adb04aa9c22316ff2df800dbb58727cbf649b7787a15e"
+  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.1.2/geant4-v11.1.2.tar.gz"
+  version "11.1.2" # NOTE see post-install when updating to newer versions
+  sha256 "e9df8ad18c445d9213f028fd9537e174d6badb59d94bab4eeae32f665beb89af"
 
   #bottle do
   #  root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-  #  sha256 arm64_ventura: "a27d364d9816092c9e22fe369e01025e9f40766b5c8d40c73103e22ca437c201"
+  #  sha256 cellar: :any, monterey: "0e099d61f40aa3a186c68a93027de8c85b9f432982703c59dc3854ba615c7a54"
+  #  sha256 cellar: :any, arm64_ventura: "e8a6ce9a65e3df8d2fffc5d92b77fdcf2d3af9b3c1e39491bcf2602df376f988"
   #end
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 arm64_ventura: "a27d364d9816092c9e22fe369e01025e9f40766b5c8d40c73103e22ca437c201"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "xerces-c"
 
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
@@ -23,8 +28,8 @@ class Geant4 < Formula
   end
 
   resource "G4EMLOW" do
-    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.5.tar.gz"
-    sha256 "66baca49ac5d45e2ac10c125b4fb266225e511803e66981909ce9cd3e9bcef73"
+    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.2.tar.gz"
+    sha256 "3d7768264ff5a53bcb96087604bbe11c60b7fea90aaac8f7d1252183e1a8e427"
   end
 
   resource "PhotonEvaporation" do
@@ -48,13 +53,13 @@ class Geant4 < Formula
   end
 
   resource "G4ABLA" do
-    url "https://cern.ch/geant4-data/datasets/G4ABLA.3.3.tar.gz"
-    sha256 "1e041b3252ee9cef886d624f753e693303aa32d7e5ef3bba87b34f36d92ea2b1"
+    url "https://cern.ch/geant4-data/datasets/G4ABLA.3.1.tar.gz"
+    sha256 "7698b052b58bf1b9886beacdbd6af607adc1e099fc730ab6b21cf7f090c027ed"
   end
 
   resource "G4INCL" do
-    url "https://cern.ch/geant4-data/datasets/G4INCL.1.2.tar.gz"
-    sha256 "f880b16073ee0a92d7494f3276a6d52d4de1d3677a0d4c7c58700396ed0e1a7e"
+    url "https://cern.ch/geant4-data/datasets/G4INCL.1.0.tar.gz"
+    sha256 "716161821ae9f3d0565fbf3c2cf34f4e02e3e519eb419a82236eef22c2c4367d"
   end
 
   resource "G4PII" do
@@ -85,7 +90,7 @@ class Geant4 < Formula
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
         -DGEANT4_USE_SYSTEM_EXPAT=OFF
-        -DCMAKE_PREFIX_PATH=Formula["qt"].opt_prefix
+        -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
       ]
 
       system "cmake", *args
