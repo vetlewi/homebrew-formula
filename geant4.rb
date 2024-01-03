@@ -5,14 +5,14 @@ class Geant4 < Formula
   version "11.2.0" # NOTE see post-install when updating to newer versions
   sha256 "1a9e7eeb79519156c10adb04aa9c22316ff2df800dbb58727cbf649b7787a15e"
 
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 arm64_sonoma: "3178d1fbea0a68560516baee58bfa0ab46820535a506e167229a2536f311dcf1"
-  end
+#  bottle do
+#    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+#    sha256 arm64_sonoma: "3178d1fbea0a68560516baee58bfa0ab46820535a506e167229a2536f311dcf1"
+#  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "xerces-c"
 
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
@@ -84,12 +84,13 @@ class Geant4 < Formula
         -DGEANT4_USE_GDML=ON
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
+        -DGEANT4_USE_QT_QT6=ON
         -DGEANT4_USE_SYSTEM_EXPAT=OFF
-        -DCMAKE_PREFIX_PATH=Formula["qt@5"].opt_prefix
+        -DCMAKE_PREFIX_PATH=Formula["qt"].opt_prefix
       ]
 
       system "cmake", *args
-      system "make", "install"
+      system "make", "install", "-j10"
     end
   end
 
