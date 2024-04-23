@@ -3,7 +3,7 @@ class Talys < Formula
   homepage "http://talys.eu"
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.0.tar.gz"
   version "2.0"
-  sha256 "9e8af28eaeb3d0712131a0daacdf73f8067251183ddf88681d8f6c330fd131fb"
+  sha256 "0732b21078f02d16f1feac7237606825de736f2a1de97b19bfdc160624eab8db"
   license "MIT"
 
   depends_on "cmake" => :build
