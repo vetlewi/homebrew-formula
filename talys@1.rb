@@ -8,8 +8,7 @@ class TalysAT1 < Formula
 
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, monterey: "d86c547341f0f4b09c8120315409e2779a66defdb37a8cc3380a0a04354c08b9"
-    sha256 arm64_sonoma: "11a19ee9363b9c82027847f173970a8ba22ce7287640694a9b5e7389299a80ef"
+    sha256 cellar: :any, arm64_sonoma: "89c49722d3ba42a849ff0cbcb2f5433d8b176b71a45765ed0cf6328d65f57f03"
   end
 
   depends_on "cmake" => :build
