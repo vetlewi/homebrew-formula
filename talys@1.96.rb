@@ -1,4 +1,4 @@
-class Talys < Formula
+class TalysAT1.96 < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96TfKeyword.tar.gz"
