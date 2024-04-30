@@ -1,15 +1,12 @@
 class Talys < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
-  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.0.tar.gz"
+  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.0-fixed.tar.gz"
   version "2.0"
-  sha256 "0732b21078f02d16f1feac7237606825de736f2a1de97b19bfdc160624eab8db"
+  sha256 "040719351b870dec36a18c7c52dba1a33be15e7972e0f0f07311921e8471c497"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 arm64_sonoma: "48ba336f0eecd4c01ef7b30f9408e7b27bf818c0dfa4a52f43a634f101f94870"
-  end
+
 
   depends_on "cmake" => :build
   depends_on "gcc"
