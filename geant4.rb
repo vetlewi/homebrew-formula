@@ -5,6 +5,11 @@ class Geant4 < Formula
   version "11.2.2" # NOTE see post-install when updating to newer versions
   sha256 "2d024adb99cb11a25723fd83e585502501ff06c9bb7235b995b236f1263cc7ea"
 
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 arm64_sequoia: "5388a7ef4cb15b9baae443f9a80bcd92c192e8950b9625268f067a3e19fe2657"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
   depends_on "qt"
