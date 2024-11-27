@@ -1,9 +1,14 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.2.2/geant4-v11.2.2.tar.bz2"
-  version "11.2.2" # NOTE see post-install when updating to newer versions
-  sha256 "2d024adb99cb11a25723fd83e585502501ff06c9bb7235b995b236f1263cc7ea"
+  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.2.0/geant4-v11.2.0.tar.bz2"
+  version "11.2.0" # NOTE see post-install when updating to newer versions
+  sha256 "1a9e7eeb79519156c10adb04aa9c22316ff2df800dbb58727cbf649b7787a15e"
+
+  bottle do
+    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
+    sha256 arm64_sonoma: "12d8b52151e7787ac1f39bdb9b0c98800d8ba3518038e9cee2a0507d2c767e52"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
@@ -13,8 +18,8 @@ class Geant4 < Formula
   # Check for updates in cmake/Modules/Geant4DatasetDefinitions.cmake
 
   resource "G4NDL" do
-    url "https://cern.ch/geant4-data/datasets/G4NDL.4.7.1.tar.gz"
-    sha256 "d3acae48622118d2579de24a54d533fb2416bf0da9dd288f1724df1485a46c7c"
+    url "https://cern.ch/geant4-data/datasets/G4NDL.4.7.tar.gz"
+    sha256 "7e7d3d2621102dc614f753ad928730a290d19660eed96304a9d24b453d670309"
   end
 
   resource "G4EMLOW" do
@@ -23,7 +28,7 @@ class Geant4 < Formula
   end
 
   resource "PhotonEvaporation" do
-    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.1.tar.gz"
+    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.tar.gz"
     sha256 "761e42e56ffdde3d9839f9f9d8102607c6b4c0329151ee518206f4ee9e77e7e5"
   end
 
