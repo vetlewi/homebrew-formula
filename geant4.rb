@@ -23,7 +23,7 @@ class Geant4 < Formula
   end
 
   resource "PhotonEvaporation" do
-    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.1.tar.gz"
+    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.tar.gz"
     sha256 "761e42e56ffdde3d9839f9f9d8102607c6b4c0329151ee518206f4ee9e77e7e5"
   end
 
