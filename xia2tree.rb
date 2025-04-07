@@ -1,5 +1,5 @@
-class XIA2tree < Formula
-    desc "Toolkit for analysis of raw data from experiments with XIA Pixie-16 DGFs"
+class Xia2tree < Formula
+    desc "XIA2tree: Toolkit for analysis of raw data from experiments with XIA Pixie-16 DGFs"
     homepage "https://github.com/vetlewi/XIA2tree"
     url "https://github.com/vetlewi/XIA2tree/archive/refs/tags/v0.9.0.tar.gz"
     version "0.9.0"
