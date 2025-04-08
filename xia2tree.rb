@@ -15,8 +15,8 @@ class Xia2tree < Formula
                 -DHOMEBREW_ALLOW_FETCHCONTENT=ON
             ]
             system "cmake", *args
-            system "cmake", "--build", "-j"
-            system "cmake", "--install"
+            system "cmake", "--build", ".", "-j"
+            system "cmake", "--install", "."
         end
     end
 end
