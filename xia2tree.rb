@@ -10,11 +10,11 @@ class Xia2tree < Formula
 
     def install
         mkdir "XIA2tree-build" do
-            buildargs = %w[
-                --build
-                -j
+            args = std_cmake_args + %w[
+                ../
+                -DHOMEBREW_ALLOW_FETCHCONTENT=ON
             ]
-            system "cmake", "..", *std_cmake_args
+            system "cmake", *args
             system "cmake", "--build", "-j"
             system "cmake", "--install"
         end
