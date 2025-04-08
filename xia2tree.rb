@@ -5,6 +5,12 @@ class Xia2tree < Formula
     version "0.9.3"
     sha256 "18b13933abd196147a96e512661e8ff029ef77ef197bbe11b1d9e28da991bcfe"
 
+    bottle do
+        root_url "https://github.com/vetlewi/XIA2tree/releases/download/v0.9.5"
+        sha256 cellar: :any, arm64_sonoma: "24062d613e7e903aa49117aaf62fd4bffc5c9a184dbc2ab315c8e8be63c299ca"
+    end
+
+
     depends_on "cmake" => [:build, :test]
     depends_on "root"
 
