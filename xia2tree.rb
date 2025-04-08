@@ -14,7 +14,7 @@ class Xia2tree < Formula
                 --build
                 -j
             ]
-            system "cmake", *std_cmake_args
+            system "cmake", "..", *std_cmake_args
             system "cmake", "--build", "-j"
             system "cmake", "--install"
         end
