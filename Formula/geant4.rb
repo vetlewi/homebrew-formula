@@ -57,8 +57,8 @@ class Geant4 < Formula
   end
 
   resource "G4ENSDFSTATE" do
-    url "https://cern.ch/geant4-data/datasets/G4ENSDFSTATE.2.3.tar.gz"
-    sha256 "9444c5e0820791abd3ccaace105b0e47790fadce286e11149834e79c4a8e9203"
+    url "https://cern.ch/geant4-data/datasets/G4ENSDFSTATE.3.0.tar.gz"
+    sha256 "4bdc3bd40b31d43485bf4f87f055705e540a6557d64ed85c689c59c9a4eba7d6"
   end
 
   resource "RealSurface" do
