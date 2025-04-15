@@ -2,7 +2,7 @@ class Geant4AT10 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "https://gitlab.cern.ch/geant4/geant4/-/archive/v10.7.4/geant4-v10.7.4.tar.gz"
-  #version "10.7.4"
+  # version "10.7.4"
   sha256 "7e381f8945c75388b79af98b95be31a0933641c1af8d74ab9b6cf39d5aa98317"
 
   depends_on "cmake" => [:build, :test]

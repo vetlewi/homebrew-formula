@@ -2,7 +2,7 @@ class TalysAT1 < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96TfKeyword.tar.gz"
-  version "1.96"
+  # version "1.96"
   sha256 "8397e9e7c3d5595bf6e0afe3b10dc114dd65b627b2717187f21242b551799f98"
   license "GPL-1.0-or-later"
 
