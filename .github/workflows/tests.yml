@@ -46,7 +46,7 @@ jobs:
         env:
           HOMEBREW_NO_INSTALL_FROM_API: 1
 
-      - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/vetlewi/personal"
+      - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/vetlewi/formula"
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
