@@ -9,9 +9,11 @@ jobs:
       matrix:
         include:
           - os: macos-15
+          - os: ubuntu-22.04-arm
+            container: '{"image": "ghcr.io/homebrew/ubuntu22.04:master"}'
       fail-fast: false
     runs-on: ${{ matrix.os }}
-    #container: ${{ matrix.container && fromJSON(matrix.container) || '' }}
+    container: ${{ matrix.container && fromJSON(matrix.container) || '' }}
     steps:
       - name: Setup Homebrew
         id: set-up-homebrew
