@@ -1,0 +1,58 @@
+name: brew test-bot
+
+on: workflow_dispatch
+
+
+jobs:
+  test-bot:
+    strategy:
+      matrix:
+        include:
+          - os: macos-15
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container && fromJSON(matrix.container) || '' }}
+    steps:
+      - name: Setup Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: ${{ matrix.os == 'ubuntu-22.04-arm' }}
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-
+
+      - run: brew test-bot --only-cleanup-before
+
+      - run: brew test-bot --only-setup
+        continue-on-error: ${{ matrix.os == 'ubuntu-22.04-arm' }}
+
+      - run: brew test-bot --only-tap-syntax
+        if: matrix.os != 'ubuntu-22.04-arm'
+
+      - run: brew deps --include-build --topological gnu-tar | xargs brew install --build-from-source gnu-tar
+        if: matrix.os == 'ubuntu-22.04-arm'
+        env:
+          HOMEBREW_NO_INSTALL_FROM_API: 1
+
+      - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/vetlewi/personal"
+        if: github.event_name == 'pull_request'
+
+      #- name: Upload bottles as artifact
+      #  if: always() && github.event_name == 'pull_request'
+      #  uses: actions/upload-artifact@v4
+      #  with:
+      #    name: bottles_${{ matrix.os }}
+      #    path: '*.bottle.*'
+
