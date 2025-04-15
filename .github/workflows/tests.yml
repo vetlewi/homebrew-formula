@@ -1,6 +1,11 @@
 name: brew test-bot
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
 
 
 jobs:
@@ -9,8 +14,8 @@ jobs:
       matrix:
         include:
           - os: macos-15
-          - os: ubuntu-22.04-arm
-            container: '{"image": "ghcr.io/homebrew/ubuntu22.04:master"}'
+          #- os: ubuntu-22.04-arm
+          #  container: '{"image": "ghcr.io/homebrew/ubuntu22.04:master"}'
       fail-fast: false
     runs-on: ${{ matrix.os }}
     container: ${{ matrix.container && fromJSON(matrix.container) || '' }}
@@ -42,10 +47,10 @@ jobs:
           HOMEBREW_NO_INSTALL_FROM_API: 1
 
       - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/vetlewi/personal"
-        #if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
-        #if: always() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: bottles_${{ matrix.os }}
