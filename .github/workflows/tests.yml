@@ -42,12 +42,12 @@ jobs:
           HOMEBREW_NO_INSTALL_FROM_API: 1
 
       - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/vetlewi/personal"
-        if: github.event_name == 'pull_request'
+        #if: github.event_name == 'pull_request'
 
-      #- name: Upload bottles as artifact
-      #  if: always() && github.event_name == 'pull_request'
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    name: bottles_${{ matrix.os }}
-      #    path: '*.bottle.*'
+      - name: Upload bottles as artifact
+        #if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: bottles_${{ matrix.os }}
+          path: '*.bottle.*'
 
