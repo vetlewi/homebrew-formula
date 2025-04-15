@@ -28,7 +28,7 @@ class Geant4 < Formula
 
   resource "RadioactiveDecay" do
     url "https://cern.ch/geant4-data/datasets/G4RadioactiveDecay.6.1.2.tar.gz"
-    sha256 "Fa40d7e3ebc64d35555c4a49d0ff1e0945cd605d84354d053121293914caea13a"
+    sha256 "a40d7e3ebc64d35555c4a49d0ff1e0945cd605d84354d053121293914caea13a"
   end
 
   resource "G4PARTICLEXS" do
