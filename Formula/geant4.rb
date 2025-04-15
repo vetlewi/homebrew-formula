@@ -76,6 +76,11 @@ class Geant4 < Formula
     sha256 "4b7274020cc8b4ed569b892ef18c2e088edcdb6b66f39d25585ccee25d9721e0"
   end
 
+  resource "G4NUDEXLIB" do
+    url "https://cern.ch/geant4-data/datasets/G4NUDEXLIB.1.0.tar.gz"
+    sha256 "cac7d65e9c5af8edba2b2667d5822e16aaf99065c95f805e76de4cc86395f415"
+  end
+
   def install
     mkdir "geant-build" do
       args = std_cmake_args + %w[
