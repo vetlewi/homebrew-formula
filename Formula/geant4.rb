@@ -81,6 +81,11 @@ class Geant4 < Formula
     sha256 "cac7d65e9c5af8edba2b2667d5822e16aaf99065c95f805e76de4cc86395f415"
   end
 
+  resource "G4URRPT" do
+    url "https://cern.ch/geant4-data/datasets/G4URRPT.1.1.tar.gz"
+    sha256 "6a3432db80bc088aee19c504b9c0124913005d6357ea14870451400ab20d9c11"
+  end
+
   def install
     mkdir "geant-build" do
       args = std_cmake_args + %w[
