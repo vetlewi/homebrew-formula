@@ -1,14 +1,9 @@
-class Geant4 < Formula
+class Geant4AT112 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.2.0/geant4-v11.2.0.tar.bz2"
-  version "11.2.0" # NOTE see post-install when updating to newer versions
+  version "11.2.0" # NOTE: see post-install when updating to newer versions
   sha256 "1a9e7eeb79519156c10adb04aa9c22316ff2df800dbb58727cbf649b7787a15e"
-
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 arm64_sonoma: "12d8b52151e7787ac1f39bdb9b0c98800d8ba3518038e9cee2a0507d2c767e52"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
@@ -94,6 +89,12 @@ class Geant4 < Formula
     end
   end
 
+  def post_install
+    resources.each do |r|
+      (share/"Geant4/data/#{r.name}#{r.version}").install r
+    end
+  end
+
   def caveats
     <<~EOS
       Because Geant4 expects a set of environment variables for
@@ -101,12 +102,6 @@ class Geant4 < Formula
         . #{HOMEBREW_PREFIX}/bin/geant4.sh (or .csh)
       before running an application built with Geant4.
     EOS
-  end
-
-  def post_install
-    resources.each do |r|
-      (share/"Geant4/data/#{r.name}#{r.version}").install r
-    end
   end
 
   test do

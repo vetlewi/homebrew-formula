@@ -5,11 +5,6 @@ class Geant4AT10 < Formula
   version "10.7.4"
   sha256 "7e381f8945c75388b79af98b95be31a0933641c1af8d74ab9b6cf39d5aa98317"
 
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, arm64_ventura: "513cc362e8c646f3c0a43f5e6471c7b6333f06a5c3f41796c7cfae64947c730e"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
   depends_on "qt@5"
@@ -93,6 +88,12 @@ class Geant4AT10 < Formula
     end
   end
 
+  def post_install
+    resources.each do |r|
+      (share/"Geant4-#{version}/data/#{r.name}#{r.version}").install r
+    end
+  end
+
   def caveats
     <<~EOS
       Because Geant4 expects a set of environment variables for
@@ -100,12 +101,6 @@ class Geant4AT10 < Formula
         . #{HOMEBREW_PREFIX}/bin/geant4.sh (or .csh)
       before running an application built with Geant4.
     EOS
-  end
-
-  def post_install
-    resources.each do |r|
-      (share/"Geant4-#{version}/data/#{r.name}#{r.version}").install r
-    end
   end
 
   test do
