@@ -2,7 +2,6 @@ class Geant4AT112 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
   url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.2.0/geant4-v11.2.0.tar.bz2"
-  # version "11.2.0" # NOTE: see post-install when updating to newer versions
   sha256 "1a9e7eeb79519156c10adb04aa9c22316ff2df800dbb58727cbf649b7787a15e"
 
   depends_on "cmake" => [:build, :test]
