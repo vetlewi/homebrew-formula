@@ -17,8 +17,8 @@ class Geant4 < Formula
   end
 
   resource "G4EMLOW" do
-    url "https://cern.ch/geant4-data/datasets/G4EMLOW.8.5.tar.gz"
-    sha256 "66baca49ac5d45e2ac10c125b4fb266225e511803e66981909ce9cd3e9bcef73"
+    url "https://geant4-data.web.cern.ch/datasets/G4EMLOW.8.6.1.tar.gz"
+    sha256 "4a93588d26080ce1d336b94f76fadabe4905fb8f1cba2415795023d6cd8f4a8a"
   end
 
   resource "PhotonEvaporation" do
