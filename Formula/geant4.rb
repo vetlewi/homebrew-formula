@@ -31,14 +31,24 @@ class Geant4 < Formula
     sha256 "Fa40d7e3ebc64d35555c4a49d0ff1e0945cd605d84354d053121293914caea13a"
   end
 
-  resource "G4SAIDDATA" do
-    url "https://cern.ch/geant4-data/datasets/G4SAIDDATA.2.0.tar.gz"
-    sha256 "1d26a8e79baa71e44d5759b9f55a67e8b7ede31751316a9e9037d80090c72e91"
-  end
-
   resource "G4PARTICLEXS" do
     url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.4.1.tar.gz"
     sha256 "07ae1e048e9ac8e7f91f6696497dd55bd50ccc822d97af1a0b9e923212a6d7d1"
+  end
+
+  resource "G4PII" do
+    url "https://cern.ch/geant4-data/datasets/G4PII.1.3.tar.gz"
+    sha256 "6225ad902675f4381c98c6ba25fc5a06ce87549aa979634d3d03491d6616e926"
+  end
+
+  resource "RealSurface" do
+    url "https://cern.ch/geant4-data/datasets/G4RealSurface.2.2.tar.gz"
+    sha256 "9954dee0012f5331267f783690e912e72db5bf52ea9babecd12ea22282176820"
+  end
+
+  resource "G4SAIDDATA" do
+    url "https://cern.ch/geant4-data/datasets/G4SAIDDATA.2.0.tar.gz"
+    sha256 "1d26a8e79baa71e44d5759b9f55a67e8b7ede31751316a9e9037d80090c72e91"
   end
 
   resource "G4ABLA" do
@@ -51,19 +61,14 @@ class Geant4 < Formula
     sha256 "f880b16073ee0a92d7494f3276a6d52d4de1d3677a0d4c7c58700396ed0e1a7e"
   end
 
-  resource "G4PII" do
-    url "https://cern.ch/geant4-data/datasets/G4PII.1.3.tar.gz"
-    sha256 "6225ad902675f4381c98c6ba25fc5a06ce87549aa979634d3d03491d6616e926"
-  end
-
   resource "G4ENSDFSTATE" do
     url "https://cern.ch/geant4-data/datasets/G4ENSDFSTATE.3.0.tar.gz"
     sha256 "4bdc3bd40b31d43485bf4f87f055705e540a6557d64ed85c689c59c9a4eba7d6"
   end
 
-  resource "RealSurface" do
-    url "https://cern.ch/geant4-data/datasets/G4RealSurface.2.2.tar.gz"
-    sha256 "9954dee0012f5331267f783690e912e72db5bf52ea9babecd12ea22282176820"
+  resource "G4CHANNELING" do
+    url "https://cern.ch/geant4-data/datasets/G4CHANNELING.1.0.tar.gz"
+    sha256 "203e3c69984ca09acd181a1d31a9b0efafad4bc12e6c608f0b05e695120d67f2"
   end
 
   resource "G4TENDL" do
