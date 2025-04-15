@@ -22,8 +22,8 @@ class Geant4 < Formula
   end
 
   resource "PhotonEvaporation" do
-    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.tar.gz"
-    sha256 "761e42e56ffdde3d9839f9f9d8102607c6b4c0329151ee518206f4ee9e77e7e5"
+    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.6.1.tar.gz"
+    sha256 "5ffc1f99a81d50c9020186d59874af73c53ba24c1842b3b82b3188223bb246f2"
   end
 
   resource "RadioactiveDecay" do
