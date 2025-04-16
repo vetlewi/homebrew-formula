@@ -4,6 +4,13 @@ class Geant4 < Formula
   url "https://gitlab.cern.ch/geant4/geant4/-/archive/v11.3.1/geant4-v11.3.1.tar.bz2"
   sha256 "4bdefeb83bb84812430cc4e2165916aef099e89a332fa4a74ef7914216c71a50"
 
+  bottle do
+    root_url "https://ghcr.io/v2/vetlewi/formula"
+    sha256 arm64_sonoma: "cc425d8fa139b71e427c4317672cf7ee6833e263a7d68bdb835482c57e37a1a9"
+    sha256 ventura:      "05100067a0df134f6475035641b4e6ce0dacfdd92bba1538d797b4b3c584e436"
+    sha256 x86_64_linux: "6e5551f4527f01f82314ec1e936053f8e71c3accce8faf50e78df307838b9142"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
   depends_on "qt"
