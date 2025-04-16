@@ -11,7 +11,7 @@ class Talys < Formula
 
   resource "TalysDB" do
     url "https://nds.iaea.org/talys/misc/structure.tar"
-    sha256 "c0e5089869085dc92595d2aa04f6f97286f2257d4fffef19f3de0073fab8b568"
+    sha256 "c155a0c4692fd9f68daa259a080a9786eab251ecb198188c9e8c3fb51c89fb43"
   end
 
   def install
