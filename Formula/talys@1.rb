@@ -5,11 +5,6 @@ class TalysAT1 < Formula
   sha256 "8397e9e7c3d5595bf6e0afe3b10dc114dd65b627b2717187f21242b551799f98"
   license "GPL-1.0-or-later"
 
-  bottle do
-    root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
-    sha256 cellar: :any, arm64_sonoma: "89c49722d3ba42a849ff0cbcb2f5433d8b176b71a45765ed0cf6328d65f57f03"
-  end
-
   depends_on "cmake" => :build
   depends_on "gcc"
 
