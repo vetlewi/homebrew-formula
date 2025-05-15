@@ -1,8 +1,8 @@
 class TalysAT1 < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
-  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96TfKeyword.tar.gz"
-  sha256 "8397e9e7c3d5595bf6e0afe3b10dc114dd65b627b2717187f21242b551799f98"
+  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96.tar.gz"
+  sha256 "56b23e28e3dab6542f642e641119675e7ed1c40487a033383b2ce503581be378"
   license "GPL-1.0-or-later"
 
   depends_on "cmake" => :build
