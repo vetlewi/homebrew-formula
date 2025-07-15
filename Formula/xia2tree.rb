@@ -22,7 +22,7 @@ class Xia2tree < Formula
       ]
       args.map! do |arg|
         arg.gsub("-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_BUILD_TYPE=RelWithDeb")
-
+      end
       system "cmake", *args
       system "cmake", "--build", ".", "-j"
       system "cmake", "--install", "."
