@@ -6,9 +6,9 @@ class Xia2tree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/vetlewi/formula"
-    sha256 cellar: :any, arm64_sequoia: "02fa8cdaf316cb3709a4b249b67fe1704006d21e5772b39d93a9aaa75d95e4e6"
-    sha256 cellar: :any, arm64_sonoma:  "c44427f3244a7fced0cf94c50512842be317552615088c5a860aa8ebb641db9a"
-    sha256 cellar: :any, ventura:       "6592e9374241c9943ce0c878f91786644bc2c7b02f265b27724b3fd0188db8b0"
+    sha256 cellar: :any, arm64_sequoia: "ee1a86cda8e5b64a212ad774b8f5303986e6604afccc13139beae644fad45e9b"
+    sha256 cellar: :any, arm64_sonoma:  "bd713e147b5f548072a36f2f8df96740d37e484cb0c1e2d1efff3b1d568a1fc5"
+    sha256 cellar: :any, ventura:       "7a9d5f65755871707d35be496534883767c13854b4b577c82c01f115e3f0f1b5"
   end
 
   depends_on "cmake" => [:build, :test]
