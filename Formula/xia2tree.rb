@@ -1,14 +1,14 @@
 class Xia2tree < Formula
   desc "Toolkit for analysis of raw data from XIA Pixie-16 DGFs"
   homepage "https://github.com/vetlewi/XIA2tree"
-  url "https://github.com/vetlewi/XIA2tree/archive/refs/tags/v0.9.9.tar.gz"
-  sha256 "a885b1e220788d83e709003e8adc00cbc7af07bc7c325186012844ab69844280"
+  url "https://github.com/vetlewi/XIA2tree/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "63d8718423af4985f663702c0d8a5508eccbb3e96cb337884595bcfdafe3ab33"
 
   bottle do
     root_url "https://ghcr.io/v2/vetlewi/formula"
-    sha256 cellar: :any, arm64_sequoia: "3996fb0915fc800b12cea38dc4d432598c269ea4f5f16716fc5775d5c89805f7"
-    sha256 cellar: :any, arm64_sonoma:  "41544287c5979c158eae96841e27618e150ce1c86dd90979b3148201581cb552"
-    sha256 cellar: :any, ventura:       "c48619a0e301c9e0e7df3b8715cebda097eaafc6a545bd7c364dc8ecdb400c03"
+    sha256 cellar: :any, arm64_sequoia: "ee1a86cda8e5b64a212ad774b8f5303986e6604afccc13139beae644fad45e9b"
+    sha256 cellar: :any, arm64_sonoma:  "bd713e147b5f548072a36f2f8df96740d37e484cb0c1e2d1efff3b1d568a1fc5"
+    sha256 cellar: :any, ventura:       "7a9d5f65755871707d35be496534883767c13854b4b577c82c01f115e3f0f1b5"
   end
 
   depends_on "cmake" => [:build, :test]
