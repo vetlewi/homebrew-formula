@@ -9,8 +9,8 @@ class Talys < Formula
   depends_on "gcc"
 
   resource "TalysDB" do
-    url "https://nds.iaea.org/talys/misc/structure.tar"
-    sha256 "ad2f9b356c391bd615c19d493cc241b47a6c51d0bf77e283cb59661f4ee78568"
+    url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0/talysDB2.22.tar.gz2"
+    sha256 "6367a3d769be2ed3561e1f913f5c7c568f5c54ffe7802cb03b10f2df2cd4f2db"
   end
 
   def install
