@@ -2,19 +2,8 @@ class Talys < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.2.tar.gz"
-  version "2.2"
   sha256 "824adb072f9a2f7fc3cf5720533af9de0552e137d8ed7209916821a618dc44a8"
   license "MIT"
-
-  bottle do
-    root_url "https://ghcr.io/v2/vetlewi/formula"
-    rebuild 1
-    sha256                               arm64_sequoia: "4edc7ee711771e86eaa5bc257b2b5f0bd952738b5c81b87b0c66fb75d4a278df"
-    sha256                               arm64_sonoma:  "f734dcb3d301905b065ac09aec291e8392cfd95f64c841acc6ea5f7b3f36feec"
-    sha256 cellar: :any,                 ventura:       "f40cbe992349c6936556342f5b5e9023d7359b74f6c5ebbd8d3b395bd0631aaa"
-    sha256                               arm64_linux:   "080cefbd48128f5f41728512a662074c4e5b93e4e7bd5bb3d935f6356358cc1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5e3fe9c45a384457c9b180df8461306470ccd69802cbc844733d996a1f5b62"
-  end
 
   depends_on "cmake" => :build
   depends_on "gcc"
