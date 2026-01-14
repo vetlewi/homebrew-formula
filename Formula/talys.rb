@@ -1,9 +1,9 @@
 class Talys < Formula
   desc "Open source software package for the simulation of nuclear reactions"
   homepage "http://talys.eu"
-  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.0-4.tar.gz"
-  version "2.0"
-  sha256 "1c878aee255ed4b957ef8da0f31d7892052f0daa68b8489b9caae418da18acd3"
+  url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.2.tar.gz"
+  version "2.2"
+  sha256 "824adb072f9a2f7fc3cf5720533af9de0552e137d8ed7209916821a618dc44a8"
   license "MIT"
 
   bottle do
