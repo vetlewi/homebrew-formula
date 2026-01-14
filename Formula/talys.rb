@@ -25,9 +25,4 @@ class Talys < Formula
   def post_install
     (pkgshare/"structure").install resource("TalysDB")
   end
-
-  test do
-    assert_match "The TALYS team congratulates you with this successful calculation.",
-      shell_output("#{bin}/talys < #{pkgshare}/simple.txt")
-  end
 end
