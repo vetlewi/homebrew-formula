@@ -18,7 +18,7 @@ jobs:
       packages: write
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Set up git
         uses: Homebrew/actions/git-user-config@master
