@@ -1,4 +1,4 @@
-class OCLQtAT5 < Formula
+class OclqtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
