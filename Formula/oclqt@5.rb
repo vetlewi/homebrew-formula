@@ -14,16 +14,6 @@ class OCLQtAT5 < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
-  bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "4ce6952f894ddae8cc4b0d7532b580884a2a8604d848eceb7e32d4dbbf97db5f"
-    sha256 cellar: :any,                 arm64_sequoia: "e3848bb310f2187e0698b5f4395efd9ff6b2da1ac4b3a637fb9a205476406fe4"
-    sha256 cellar: :any,                 arm64_sonoma:  "68637da482bcc8a3efc48aa389210e4bd2cfb7ddc425e68b0ec985e176516979"
-    sha256 cellar: :any,                 sonoma:        "b8366510a237752d4aa5902b3ed14bf77f3ea41e3b305fdf2d81aeaeb46b5c39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6e96dedd3e8f3870c47e389dfa3396823f161d0fce6bfaa1f9d730cdb82aa15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c739d5396293f1220ae0750b75fd533b0a11653615373f8362184cdd38e3ab"
-  end
-
   keg_only :versioned_formula
 
   # Deprecating on expected date of Qt 5.15.19 open-source release which is
