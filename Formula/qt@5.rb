@@ -169,7 +169,6 @@ class QtAT5 < Formula
       -system-pcre
       -system-sqlite
       -system-zlib
-      -skip qtwebengine
     ]
 
     if OS.mac?
