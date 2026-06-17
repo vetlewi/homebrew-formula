@@ -17,10 +17,10 @@ jobs:
           - os: macos-15
           - os: macos-15-intel
           - os: macos-26
-          - os: ubuntu-22.04
-            container: '{"image": "ghcr.io/homebrew/ubuntu22.04:master"}'          
-          - os: ubuntu-22.04-arm
-            container: '{"image": "ghcr.io/homebrew/ubuntu22.04:master"}'
+          - os: ubuntu-24.04
+            container: '{"image": "ghcr.io/homebrew/ubuntu24.04:main"}'          
+          - os: ubuntu-24.04-arm
+            container: '{"image": "ghcr.io/homebrew/ubuntu24.04:main"}'
       fail-fast: false
     runs-on: ${{ matrix.os }}
     container: ${{ matrix.container && fromJSON(matrix.container) || '' }}
