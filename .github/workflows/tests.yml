@@ -15,7 +15,7 @@ jobs:
         include:
           - os: macos-14
           - os: macos-15
-          - os: macos-15-intel
+          - os: macos-26-intel
           - os: macos-26
           - os: ubuntu-24.04
             container: '{"image": "ghcr.io/homebrew/ubuntu24.04:main"}'          
