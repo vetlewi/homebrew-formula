@@ -4,6 +4,7 @@ class TalysAT1 < Formula
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v1.96TfKeyword.tar.gz"
   sha256 "8397e9e7c3d5595bf6e0afe3b10dc114dd65b627b2717187f21242b551799f98"
   license "GPL-1.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/vetlewi/homebrew-formula/releases/download/v1.0"
@@ -19,15 +20,11 @@ class TalysAT1 < Formula
   end
 
   def install
-    mkdir "talys_build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "talys_build", *std_cmake_args
+    system "cmake", "--build", "talys_build"
+    system "cmake", "--install", "talys_build"
     pkgshare.install "LICENSE"
     pkgshare.install "test/simple.txt"
-  end
-
-  def post_install
     (pkgshare/"structure").install resource("TalysDB")
   end
 

@@ -101,9 +101,7 @@ class Geant4 < Formula
       system "cmake", *args
       system "make", "install", "-j10"
     end
-  end
 
-  def post_install
     resources.each do |r|
       (share/"Geant4/data/#{r.name}#{r.version}").install r
     end
