@@ -1,8 +1,8 @@
 class Xia2tree < Formula
   desc "Toolkit for analysis of raw data from XIA Pixie-16 DGFs"
   homepage "https://github.com/vetlewi/XIA2tree"
-  url "https://github.com/vetlewi/XIA2tree/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "059f35d8a0027f20962ca2693d13dfdb6f7eda55fd0776ddd9a24890eb817074"
+  url "https://github.com/vetlewi/XIA2tree/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "9e0f1f24cbf1f52b62c66984a02367c69352b351367080d4365a3c65bf2e22a6"
 
   bottle do
     root_url "https://ghcr.io/v2/vetlewi/formula"
