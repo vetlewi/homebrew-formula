@@ -28,4 +28,8 @@ class Xia2tree < Formula
       system "cmake", "--install", "."
     end
   end
+
+  test do
+    assert_predicate bin/"XIA2tree", :executable?
+  end
 end
