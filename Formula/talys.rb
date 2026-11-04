@@ -4,6 +4,7 @@ class Talys < Formula
   url "https://github.com/oslocyclotronlab/Talys-code/archive/refs/tags/v2.2.tar.gz"
   sha256 "824adb072f9a2f7fc3cf5720533af9de0552e137d8ed7209916821a618dc44a8"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/vetlewi/formula"
@@ -24,15 +25,11 @@ class Talys < Formula
   end
 
   def install
-    mkdir "talys_build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "talys_build", *std_cmake_args
+    system "cmake", "--build", "talys_build"
+    system "cmake", "--install", "talys_build"
     pkgshare.install "LICENSE"
     pkgshare.install "test/simple.txt"
-  end
-
-  def post_install
     (pkgshare/"structure").install resource("TalysDB")
   end
 end
